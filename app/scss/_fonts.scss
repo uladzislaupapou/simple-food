@@ -1,0 +1,6 @@
+@import 'mixin';
+
+@include font-face(Rubik, Rubik-Light, 300, normal);
+@include font-face(Rubik, Rubik-Regular, 400, normal);
+@include font-face(Rubik, Rubik-MediumItalic, 400, italic);
+@include font-face(Rubik, Rubik-Medium, 500, normal);
