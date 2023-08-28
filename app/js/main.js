@@ -22,6 +22,7 @@ $(function () {
     $('.testimonials__list').slick({
 			dots: true,
 			arrows: true,
+      infinite: false,
 			prevArrow:
 				'<button type="button" class="slick-slider__arrow slick-slider__arrow--prev"><svg class="slick-slider__icon slick-slider__icon--left"><use xlink:href="images/sprite.svg#icon-left"></use></svg></button>',
 			nextArrow:
