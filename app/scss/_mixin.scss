@@ -36,3 +36,55 @@
     font-style: $style;
   }
 }
+
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+
+    @if $type ==max {
+      $width: $width - 1px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin burger($burgerWidth, $burgerHeight, $burgerLineHeight, $burgerColor) {
+  width: $burgerWidth;
+  height: $burgerHeight; 
+  position: relative;
+  color: $burgerColor; 
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    width: 30px;
+    height: $burgerLineHeight;
+    background-color: currentColor;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 30px;
+    height: $burgerLineHeight;
+    background-color: currentColor;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  &::before {
+    top: 11px;
+  }
+
+  &::after {
+    bottom: 11px;
+  }
+}
