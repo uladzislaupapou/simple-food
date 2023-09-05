@@ -5,22 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
 	const bodyLock = document.querySelector('body')
 	const headerElement = document.querySelector('.header')
 
-	function removeMobileMenu() {
+	function addMobileMenu() {
+		mobileMenu.classList.add('mobile-menu--active')
+		bodyLock.classList.add('lock')
+		headerElement.classList.add('header-lock')
+	}
+  function removeMobileMenu() {
 		mobileMenu.classList.remove('mobile-menu--active')
 		bodyLock.classList.remove('lock')
 		headerElement.classList.remove('header-lock')
 	}
 
-	burger.addEventListener('click', () => {
-		mobileMenu.classList.toggle('mobile-menu--active')
-
-		if (mobileMenu.classList.contains('mobile-menu--active')) {
-			bodyLock.classList.add('lock')
-			headerElement.classList.add('header-lock')
-		} else {
-			bodyLock.classList.remove('lock')
-			headerElement.classList.remove('header-lock')
-		}
+  burger.addEventListener('click', () => {
+		addMobileMenu()
 	})
 
 	mobileBurgerBtn.addEventListener('click', () => {
@@ -28,10 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
 	document.addEventListener('click', function (e) {
-		if (e.target !== mobileMenu && e.target !== burger) {
+		if (
+			e.target !== mobileMenu &&
+			!mobileMenu.contains(e.target) &&
+			e.target !== burger
+		) {
 			removeMobileMenu()
 		}
-		return
 	})
 })
 

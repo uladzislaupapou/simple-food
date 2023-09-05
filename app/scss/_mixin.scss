@@ -37,16 +37,7 @@
   }
 }
 
-$breakpoints: (
-  "phone-2": 460px,
-  "phone": 560px,
-  "tablet": 768px,
-  "tablet-2": 992px,
-  "desktop-2": 1120px,
-  "desktop": 1230px
-);
-
-@mixin mq($width, $type: min) {
+@mixin mq($width, $type: max) {
   @if map_has_key($breakpoints, $width) {
     $width: map_get($breakpoints, $width);
 
@@ -60,7 +51,6 @@ $breakpoints: (
   }
 }
 
-
 @mixin burger($burgerWidth, $burgerHeight, $burgerLineHeight, $burgerColor) {
   width: $burgerWidth;
   height: $burgerHeight; 
@@ -69,12 +59,12 @@ $breakpoints: (
 
   &__line {
     position: absolute;
-    left: 0;
     top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
+    left: 50%; 
+    width: 30px;
     height: $burgerLineHeight;
     background-color: currentColor;
+    transform: translate(-50%, -50%);
     transition: transform 0.3s ease-in-out;
   }
 
@@ -82,18 +72,19 @@ $breakpoints: (
   &::after {
     content: "";
     position: absolute;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    width: 30px;
     height: $burgerLineHeight;
     background-color: currentColor;
+    transform: translateX(-50%);
     transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   }
 
   &::before {
-    top: 0;
+    top: 11px;
   }
 
   &::after {
-    top: calc(100% - $burgerLineHeight);
+    bottom: 11px;
   }
 }

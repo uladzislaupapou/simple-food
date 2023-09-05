@@ -12,7 +12,13 @@ $white-100: #fff2ed;
 $white-200: #eeeff3;
 $black: #000;
 
-
+$breakpoints: (
+  "phone": 560px,
+  "tablet": 768px,
+  "tablet-2": 992px,
+  "desktop-2": 1120px,
+  "desktop": 1230px
+);
 
 %rubik-300 {
   font-family: 'Rubik', sans-serif;
@@ -34,3 +40,5 @@ $black: #000;
   font-family: 'Rubik', sans-serif;
   font-weight: 500;
 }
+
+
