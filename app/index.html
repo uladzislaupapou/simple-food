@@ -21,27 +21,27 @@
 		<link rel="manifest" href="images/favicon/site.webmanifest" />
 		<link rel="stylesheet" href="css/style.min.css" />
 	</head>
-	<body>
+	<body id="body">
 		<div class="wrapper">
 			<header class="header">
 				<div class="container">
 					<nav class="header__menu">
-						<a class="logo header__logo" href="#">
+						<a class="logo header__logo" href="/">
 							<img class="logo__img" src="images/logo.svg" alt="Логотип" />
 						</a>
 						<ul class="menu-list header__menu-list">
 							<li class="menu-list__item">
 								<a
-									class="link-animation menu-list__link menu-list__link--active"
-									href="#"
+									class="link-animation menu-list__link scroll menu-list__link--active"
+									href="#body"
 									>Главная</a
 								>
 							</li>
 							<li class="menu-list__item">
-								<a class="link-animation menu-list__link" href="#">Блюда</a>
+								<a class="link-animation menu-list__link" href="catalog.html">Блюда</a>
 							</li>
 							<li class="menu-list__item">
-								<a class="link-animation menu-list__link" href="#">Контакты</a>
+								<a class="link-animation menu-list__link scroll" href="#contacts">Контакты</a>
 							</li>
 						</ul>
 						<ul class="user-nav">
@@ -74,7 +74,7 @@
 
 			<div class="mobile-menu">
 				<div class="mobile-menu__header">
-					<a class="logo mobile-menu__logo" href="#">
+					<a class="logo mobile-menu__logo" href="/">
 						<img
 							class="logo__img"
 							src="images/logo.svg"
@@ -90,15 +90,15 @@
 					<li class="menu-list__item mobile-menu__menu-item">
 						<a
 							class="link-animation menu-list__link"
-							href="#"
+							href="/"
 							>Главная</a
 						>
 					</li>
 					<li class="menu-list__item mobile-menu__menu-item">
-						<a class="link-animation menu-list__link" href="#">Блюда</a>
+						<a class="link-animation menu-list__link" href="catalog.html">Блюда</a>
 					</li>
 					<li class="menu-list__item mobile-menu__menu-item">
-						<a class="link-animation menu-list__link" href="#">Контакты</a>
+						<a class="link-animation menu-list__link scroll" href="#contacts">Контакты</a>
 					</li>
 				</ul>
 
@@ -773,7 +773,7 @@
 				<div class="container">
 					<div class="footer-top">
 						<div class="footer-top__section footer-top__contact-form">
-							<a class="logo footer-top__logo" href="#">
+							<a class="logo footer-top__logo scroll" href="#body">
 								<img
 									class="logo__img"
 									src="images/logo.svg"
@@ -840,7 +840,7 @@
 							</li>
 						</ul>
 
-						<div class="footer-top__section">
+						<div class="footer-top__section" id="contacts">
 							<ul class="connection footer-top__connection">
 								<li class="connection__item">
 									<a class="connection__link link-animation" href="">

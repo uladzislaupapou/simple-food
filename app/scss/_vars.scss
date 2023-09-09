@@ -11,6 +11,9 @@ $white: #fff;
 $white-100: #fff2ed;
 $white-200: #eeeff3;
 $black: #000;
+$check: #faeded;
+$bread-bg: #faedee;
+$bread: #505050;
 
 $breakpoints: (
   "phone": 560px,
@@ -39,6 +42,14 @@ $breakpoints: (
 %rubik-500 {
   font-family: 'Rubik', sans-serif;
   font-weight: 500;
+}
+
+%checkbox-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
 
